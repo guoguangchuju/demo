@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>mail</title>
+</head>
+<?php
+    header("content-type:text/html;charset=utf-8");
+    require 'PHPMailer/class.phpmailer.php';
+    try { $mail = new PHPMailer(true); $mail->IsSMTP();
+    $mail->CharSet='UTF-8';
+    $mail->SMTPAuth = true;
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port = 465;
+    $mail->Host = 'smtp.mxhichina.com';//邮箱smtp地址
+    $mail->Username = 'gzp@gzpblog.com';//你的邮箱账号
+    $mail->Password = '扒拉扒拉。。。';//你的邮箱密码
+    $mail->From = 'gzp@gzpblog.com';//你的邮箱账号
+    $mail->FromName = '锅子';
+    $to = "扒拉扒拉@qq.com";
+    $mail->AddAddress($to);
+    $mail->Subject = "test";
+    $mail->Body = 'hello!';
+    $mail->WordWrap = 80;
+    //$mail->AddAttachment("f:/test.png"); //可以添加附件
+    $mail->IsHTML(true);
+    $mail->Send();
+    echo "success!";
+    } catch (phpmailerException $e) {
+        echo "邮件发送失败：".$e->errorMessage(); //测试的时候可以去掉此行的注释
+    }
+?>
+<body>
+<div id="a" style="width:200px; height:200px; " onclick="aa();">
+   <P>
+       <input type="submit" value="发送"/>
+   </P>
+</div>
+
+</body>
+</html>

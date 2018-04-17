@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="__ADMIN__/jquery.js"></script>
+    <script type="text/javascript">
+        $(function (){
+            $('#btn1').on('click',function (){
+                $('#test1').text('我是改变你的！')
+            });
+        });
+    </script>
+</head>
+
+<body>
+<p id="test1">  __MODULE__  /jq.js。</p>
+<p id="test2">这是另一个段落。</p>
+<p>Input field: <input type="text" id="test3" value="Mickey Mouse"></p>
+<button id="btn1">设置文本</button>
+<button id="btn2">设置 HTML</button>
+<button id="btn3">设置值</button>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-xs-12 col-sm-6">
+            <ul class="info-left">
+                <?php
+              $businessup_head_info_one = get_theme_mod('businessup_head_info_one');
+              $businessup_head_info_two = get_theme_mod('businessup_head_info_two');
+            ?>
+                <li><?php echo esc_html($businessup_head_info_one); ?></li>
+                <li><?php echo esc_html($businessup_head_info_two); ?></li>
+            </ul>
+        </div>
+        <div class="col-md-6 col-xs-12">
+
+            <?php $businessup_header_widget_four_label = get_theme_mod('businessup_header_widget_four_label');
+                  $businessup_header_widget_four_link = get_theme_mod('businessup_header_widget_four_link');
+                  $businessup_header_widget_four_target = get_theme_mod('businessup_header_widget_four_target');
+
+                    if( !empty($businessup_header_widget_four_label) ):?>
+            <a href="<?php echo esc_url($businessup_header_widget_four_link); ?>" <?php if( $businessup_header_widget_four_target ==true) { echo "target='_blank'"; } ?> class="btn btn-theme quote"><?php echo esc_attr($businessup_header_widget_four_label); ?></a>
+            <?php endif; ?>
+
+
+        </div>
+    </div>
+</div>

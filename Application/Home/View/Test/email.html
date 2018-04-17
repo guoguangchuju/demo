@@ -1,0 +1,26 @@
+<?php
+$smtpserver = "smtp.qq.com";
+$smtpserverport =25;
+$smtpusermail = "601462555@qq.com";
+$smtpemailto = "1078050681@qq.com";
+$smtpuser = "601462555@qq.com";
+$smtppass = "YXZHMM601462555";
+$mailtitle = "我是主题";
+$mailcontent ="我是内容";
+$mailtype = "HTML";
+$smtp = new Smtp($smtpserver,$smtpserverport,false,$smtpuser,$smtppass);
+$smtp->debug = false;
+$state = $smtp->sendmail($smtpemailto, $smtpusermail, $mailtitle, $mailcontent, $mailtype);
+echo "<div style='width:300px; margin:36px auto;'>";
+if($state==""){
+    echo "对不起，邮件发送失败！请检查邮箱填写是否有误。";
+    echo "<a href='index.html'>点此返回</a>";
+    exit();
+}
+echo "恭喜！邮件发送成功！！";
+echo "</div>";
+
+echo "打印";
+
+
+
