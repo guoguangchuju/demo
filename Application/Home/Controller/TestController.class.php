@@ -1,8 +1,6 @@
 <?php
 namespace Home\Controller;
-use Org\Net\IpLocation;
 use Think\Controller;
-use Think\Model;
 class TestController extends Controller{
     public function test_save(){
         $this->display();
@@ -31,7 +29,7 @@ class TestController extends Controller{
         $url = 'http://api.ip138.com/query/?ip='.$ip.'&datatype='.$datatype;
         $header = array('token:00d5cb1fac5dc5cbfe2ff218292a2dfd33');
         echo getDatas($url,$header);
-        getIPLoc_QQ('152.54.41.1');
+        //getIPLoc_QQ('152.54.41.1');
 
     }
     public function test5(){
@@ -44,5 +42,7 @@ class TestController extends Controller{
     public function test6(){
         $this -> display();
     }
+    public function test7(){
 
+    }
 }
